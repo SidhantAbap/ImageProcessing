@@ -1,0 +1,31 @@
+import cv2
+import matplotlib.pylab as plt
+img = cv2.imread('umbc.jpg', 0)
+print(img.shape)
+plt.figure(figsize=(5,5))
+plt.imshow(img, cmap= 'gray')
+plt.show()
+#cv2.imshow('image',img)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
+
+near_img = cv2.resize(img,(img.shape[0] * 8, img.shape[1] * 8), interpolation = cv2.INTER_NEAREST)
+print(near_img.shape)
+plt.figure(figsize=(5,5))
+plt.imshow(near_img, cmap= 'gray')
+plt.show()
+#cv2.imshow('image',near_img)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
+
+near_img = cv2.resize(img,(img.shape[0] * 8, img.shape[1] * 8), interpolation = cv2.INTER_LINEAR)
+print(near_img.shape)
+plt.figure(figsize=(5,5))
+plt.imshow(near_img, cmap= 'gray')
+plt.show()
+
+near_img = cv2.resize(img,(img.shape[0] * 8, img.shape[1] * 8), interpolation = cv2.INTER_CUBIC)
+print(near_img.shape)
+plt.figure(figsize=(5,5))
+plt.imshow(near_img, cmap= 'gray')
+plt.show()
